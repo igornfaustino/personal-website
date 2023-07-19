@@ -1,7 +1,20 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello World</h1>
+    <main className="center flex min-h-screen w-full items-center justify-center p-24">
+      <div className="flex flex-col gap-6">
+        <h1 className="max-w-fit rounded-sm bg-theme-grey p-3 text-5xl font-semibold uppercase text-slate-100 dark:bg-slate-100 dark:text-theme-grey">
+          Igor N Faustino
+        </h1>
+        <p className="max-w-xl">
+          Hi, I{"'"}m Igor. I{"'"}m currently working as a Web Developer at
+          Objective
+        </p>
+        <Link href={'/blog'} className="text-theme-primary hover:underline">
+          Get started {'->'}
+        </Link>
+      </div>
     </main>
   )
 }
