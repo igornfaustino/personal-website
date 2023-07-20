@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 export default function Header() {
   const pathname = usePathname()
   return (
-    <div className="flex w-full justify-end gap-2">
+    <div className="container flex justify-end gap-2">
       <Link
         href="/"
         className={pathname == '/' ? 'text-theme-primary' : undefined}
