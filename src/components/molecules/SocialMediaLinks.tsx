@@ -9,7 +9,7 @@ import ExternalLink from '../atoms/ExternalLink'
 
 export default function SocialMediaLinks() {
   const iconClasses =
-    'transition-all hover:scale-125 text-theme-primary b-color-theme-primary border-theme-primary'
+    'transition-all hover:scale-125 hover:text-theme-primary b-color-theme-primary border-theme-primary'
   return (
     <div className="flex gap-10 p-3">
       <ExternalLink
