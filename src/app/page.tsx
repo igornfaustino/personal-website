@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="center flex min-h-screen w-full items-center justify-center p-24">
+    <main className="center flex h-full w-full items-center justify-center p-24">
       <div className="flex flex-col gap-6">
         <h1 className="max-w-fit rounded-sm bg-theme-grey p-3 text-5xl font-semibold uppercase text-slate-100 dark:bg-slate-100 dark:text-theme-grey">
           Igor N Faustino

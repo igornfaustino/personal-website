@@ -1,3 +1,4 @@
+import SocialMediaLinks from '@/components/SocialMediaLinks'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -17,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.className}  text-md min-h-screen bg-slate-300 text-theme-grey dark:bg-theme-grey dark:text-slate-100`}
+        className={`${inter.className} text-md flex min-h-screen flex-col items-center justify-between bg-slate-300 text-theme-grey dark:bg-theme-grey dark:text-slate-100`}
       >
         {children}
+        <SocialMediaLinks />
       </body>
     </html>
   )
