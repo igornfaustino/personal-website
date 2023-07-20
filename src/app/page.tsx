@@ -1,5 +1,5 @@
-import ShortcutButton from '@/components/atoms/ShortCut'
-import Title from '@/components/atoms/Title'
+import ShortcutButton from '@/components/ShortCut'
+import Title from '@/components/Title'
 
 export default function Home() {
   return (

@@ -1,4 +1,5 @@
-import SubTitle from '@/components/atoms/SubTitle'
+import SectionTitle from '@/components/SectionTitle'
+import SubTitle from '@/components/SubTitle'
 
 export default function AboutPage() {
   return (
@@ -24,6 +25,8 @@ export default function AboutPage() {
       </div>
 
       <hr className="mb-6 mt-6" />
+
+      <SectionTitle>Career</SectionTitle>
     </div>
   )
 }

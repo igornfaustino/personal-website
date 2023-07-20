@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from 'react-icons/fa'
-import ExternalLink from '../atoms/ExternalLink'
+import ExternalLink from './ExternalLink'
 
 export default function SocialMediaLinks() {
   const iconClasses =

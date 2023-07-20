@@ -1,5 +1,5 @@
-import Header from '@/components/molecules/Header'
-import SocialMediaLinks from '@/components/molecules/SocialMediaLinks'
+import Header from '@/components/Header'
+import SocialMediaLinks from '@/components/SocialMediaLinks'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
