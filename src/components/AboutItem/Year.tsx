@@ -1,9 +1,9 @@
-interface CareerYearProps {
+interface YearProps {
   start: string
   end?: string
 }
 
-export default function Year({ start, end }: CareerYearProps) {
+export default function Year({ start, end }: YearProps) {
   const formattedStart = start
   const formattedEnd = end || 'Present'
 

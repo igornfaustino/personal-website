@@ -1,6 +1,6 @@
 import ExternalLink from '../ExternalLink'
 
-interface CareerRootProps {
+interface PositionProps {
   company: string
   position: string
   company_url?: string
@@ -10,7 +10,7 @@ export default function Position({
   company,
   company_url,
   position,
-}: CareerRootProps) {
+}: PositionProps) {
   return (
     <div>
       <span className="font-semibold uppercase text-theme-primary">

@@ -1,11 +1,11 @@
 import { format, formatDuration, intervalToDuration, parseISO } from 'date-fns'
 
-interface CareerPeriodProps {
+interface PeriodProps {
   start: string
   end?: string
 }
 
-export default function Period({ start, end }: CareerPeriodProps) {
+export default function Period({ start, end }: PeriodProps) {
   const formattedStart = format(parseISO(start), 'MMM yyyy')
   const formattedEnd = end ? format(parseISO(end), 'MMM yyyy') : 'Present'
 

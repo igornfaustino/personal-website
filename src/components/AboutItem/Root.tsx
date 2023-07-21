@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 
-interface CareerRootProps {
+interface RootProps {
   children: ReactNode
 }
 
-export default function Root({ children }: CareerRootProps) {
+export default function Root({ children }: RootProps) {
   return <div>{children}</div>
 }

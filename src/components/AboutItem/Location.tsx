@@ -1,9 +1,9 @@
-interface CareerRootProps {
+interface RootProps {
   city: string
   country: string
 }
 
-export default function Location({ city, country }: CareerRootProps) {
+export default function Location({ city, country }: RootProps) {
   return (
     <div>
       {city}, {country}
