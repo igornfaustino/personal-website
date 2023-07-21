@@ -7,7 +7,7 @@ export default function ExternalLink(
     <a
       target="_blank"
       {...props}
-      className={`cursor-pointer hover:border-b ${props.className} flex items-center gap-2`}
+      className={`b-color-theme-primary cursor-pointer transition-all hover:scale-105 hover:border-b hover:border-theme-primary hover:text-theme-primary ${props.className}`}
     >
       {props.children}
     </a>

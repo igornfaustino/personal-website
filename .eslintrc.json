@@ -1,6 +1,8 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -13,6 +15,7 @@
         "semi": false,
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "import/no-anonymous-default-export": "off"
   }
 }

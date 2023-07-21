@@ -9,39 +9,32 @@ import {
 import ExternalLink from './ExternalLink'
 
 export default function SocialMediaLinks() {
-  const iconClasses =
-    'transition-all hover:scale-105 hover:text-theme-primary b-color-theme-primary border-theme-primary'
   return (
     <div className="flex gap-10 p-3">
-      <ExternalLink
-        className={iconClasses}
-        href="https://github.com/igornfaustino/personal-website"
-      >
-        <FaCode /> <HiddenLg>Code</HiddenLg>
+      <ExternalLink href="https://github.com/igornfaustino/personal-website">
+        <div className="flex items-center gap-2">
+          <FaCode /> <HiddenLg>Code</HiddenLg>
+        </div>
       </ExternalLink>
-      <ExternalLink
-        className={iconClasses}
-        href="https://www.linkedin.com/in/igornfaustino"
-      >
-        <FaLinkedin /> <HiddenLg>Linkedin</HiddenLg>
+      <ExternalLink href="https://www.linkedin.com/in/igornfaustino">
+        <div className="flex items-center gap-2">
+          <FaLinkedin /> <HiddenLg>Linkedin</HiddenLg>
+        </div>
       </ExternalLink>
-      <ExternalLink
-        className={iconClasses}
-        href="https://github.com/igornfaustino"
-      >
-        <FaGithub /> <HiddenLg>GitHub</HiddenLg>
+      <ExternalLink href="https://github.com/igornfaustino">
+        <div className="flex items-center gap-2">
+          <FaGithub /> <HiddenLg>GitHub</HiddenLg>
+        </div>
       </ExternalLink>
-      <ExternalLink
-        className={iconClasses}
-        href="https://twitter.com/igornfaustino"
-      >
-        <FaTwitter /> <HiddenLg>Twitter</HiddenLg>
+      <ExternalLink href="https://twitter.com/igornfaustino">
+        <div className="flex items-center gap-2">
+          <FaTwitter /> <HiddenLg>Twitter</HiddenLg>
+        </div>
       </ExternalLink>
-      <ExternalLink
-        className={iconClasses}
-        href="https://www.youtube.com/@igornfaustino"
-      >
-        <FaYoutube /> <HiddenLg>YouTube</HiddenLg>
+      <ExternalLink href="https://www.youtube.com/@igornfaustino">
+        <div className="flex items-center gap-2">
+          <FaYoutube /> <HiddenLg>YouTube</HiddenLg>
+        </div>
       </ExternalLink>
     </div>
   )
