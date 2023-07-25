@@ -1,3 +1,4 @@
+import { getAllPosts } from '@/data/getAllPosts'
 import { ReactNode } from 'react'
 import SpotlightClient from './SpotlightClient'
 
@@ -6,7 +7,8 @@ interface SpotlightProps {
 }
 
 export default async function Spotlight({ children }: SpotlightProps) {
-  // TODO: pass a json to create the actions on the client side... this is need in order to use function on the spotilight
+  const posts = await getAllPosts()
+
   const actions: SpotlightData[] = [
     {
       id: 'home',
@@ -22,6 +24,23 @@ export default async function Spotlight({ children }: SpotlightProps) {
       keywords: 'writing words',
       path: 'about',
     },
+    {
+      id: 'posts',
+      name: 'Search blog post...',
+      keywords: 'posts blog',
+      section: 'Posts',
+    },
   ]
+
+  posts.forEach((post) => {
+    actions.push({
+      id: post.slug,
+      name: post.title,
+      keywords: post.description,
+      path: `blog/${post.slug}`,
+      parent: 'posts',
+      section: 'Posts',
+    })
+  })
   return <SpotlightClient data={actions}>{children}</SpotlightClient>
 }

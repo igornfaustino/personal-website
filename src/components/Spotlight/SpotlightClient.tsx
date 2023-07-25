@@ -22,10 +22,15 @@ type ItemProps = {
 }
 
 const ResultItem = function ({ item, active }: ItemProps) {
-  if (typeof item === 'string') return <div>{item}</div>
+  if (typeof item === 'string')
+    return (
+      <div className="m-0 bg-theme-grey p-2 text-xs uppercase text-theme-white/50">
+        {item}
+      </div>
+    )
   return (
     <div
-      className={`cursor-pointer p-2  ${
+      className={`h-full cursor-pointer p-2  ${
         active ? 'bg-theme-primary' : 'dark:bg-theme-grey'
       } `}
     >
@@ -51,7 +56,7 @@ export default function SpotlightClient({
 }: SpotlightClientProps) {
   const actions = data.map(({ path, ...values }) => ({
     ...values,
-    perform: () => (window.location.pathname = path),
+    perform: path ? () => (window.location.pathname = path) : undefined,
   }))
 
   return (
@@ -63,7 +68,7 @@ export default function SpotlightClient({
     >
       <KBarPortal>
         <KBarPositioner className="h-full backdrop-blur-sm transition-all dark:bg-spotilight-bg-dark/30 dark:text-theme-white">
-          <KBarAnimator className="w-full max-w-xl overflow-hidden scroll-smooth rounded-lg border-0">
+          <KBarAnimator className="w-full max-w-xl overflow-hidden scroll-smooth rounded-lg border-0 bg-theme-grey">
             <KBarSearch className="m-0 box-border w-full p-2 outline-none dark:bg-theme-grey" />
             <RenderResults />
           </KBarAnimator>
