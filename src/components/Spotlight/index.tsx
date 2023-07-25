@@ -11,8 +11,6 @@ export default async function Spotlight({ children }: SpotlightProps) {
   const posts = await getAllPosts()
   const pages = await getAllPages()
 
-  console.log(pages)
-
   const actions: SpotlightData[] = []
 
   pages.forEach((page) => {
@@ -20,7 +18,7 @@ export default async function Spotlight({ children }: SpotlightProps) {
       id: page.spotlightTitle,
       name: page.spotlightTitle,
       keywords: page.description,
-      path: page.url ?? '',
+      path: page.url ?? '/',
     })
   })
 

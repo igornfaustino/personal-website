@@ -19,10 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body>
+      <body
+        className={`${inter.className} bg-slate-300 text-base text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
+      >
         <Spotlight>
           <div
-            className={`${inter.className} text-md flex min-h-screen flex-col items-center justify-between bg-slate-300 text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
+            className={`${inter.className} flex min-h-screen flex-col items-center justify-between`}
           >
             <HeaderClient />
             {children}

@@ -1,30 +1,17 @@
 import AboutItem from '@/components/AboutItem'
 import Divider from '@/components/Divider'
+import MarkdownText from '@/components/MarkdownText'
 import SectionTitle from '@/components/SectionTitle'
 import SubTitle from '@/components/SubTitle'
+import { getPage } from '@/data/getPage'
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const page = await getPage('About Me')
   return (
     <div className="container max-w-2xl pb-16 pt-16">
-      <SubTitle>About Me</SubTitle>
+      <SubTitle>{page?.title}</SubTitle>
 
-      <div className="mt-5 flex flex-col gap-3">
-        <p className="text-justify">
-          Hi, my name is Igor. I've been addicted to software engineering since
-          2016 when I first joined the university coursing a computer science
-          degree.
-        </p>
-
-        <p className="text-justify">
-          I'm currently working as a software developer at Objective where I
-          help build solutions with high quality!
-        </p>
-
-        <p className="text-justify">
-          I'm living in Brazil and when I'm not working I'll probably be playing
-          games, reading books or going for a run.
-        </p>
-      </div>
+      <MarkdownText className="mt-5 text-justify" source={page?.description} />
 
       <Divider />
 

@@ -1,15 +1,15 @@
 import ShortcutButton from '@/components/GetStartedClientButton'
+import MarkdownText from '@/components/MarkdownText'
 import Title from '@/components/Title'
+import { getPage } from '@/data/getPage'
 
-export default function Home() {
+export default async function Home() {
+  const page = await getPage('Home')
   return (
     <main className="center flex h-full w-full items-center justify-center p-24">
       <div className="flex flex-col items-baseline gap-6">
-        <Title>Igor N Faustino</Title>
-        <p className="max-w-xl">
-          Hi, I{"'"}m Igor. I{"'"}m currently working as a Web Developer at
-          Objective
-        </p>
+        <Title>{page?.title}</Title>
+        <MarkdownText className="max-w-xl" source={page?.description} />
         <ShortcutButton />
       </div>
     </main>
