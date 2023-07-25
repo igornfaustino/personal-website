@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
+import Spotlight from '@/components/Spotlight'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -18,12 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${inter.className} text-md flex min-h-screen flex-col items-center justify-between bg-slate-300 text-theme-grey dark:bg-theme-grey dark:text-slate-100`}
-      >
-        <Header />
-        {children}
-        <SocialMediaLinks />
+      <body>
+        <Spotlight>
+          <div
+            className={`${inter.className} text-md flex min-h-screen flex-col items-center justify-between bg-slate-300 text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
+          >
+            <Header />
+            {children}
+            <SocialMediaLinks />
+          </div>
+        </Spotlight>
       </body>
     </html>
   )

@@ -17,6 +17,7 @@ module.exports = {
         'theme-grey': '#1f1f1f',
         'theme-white': '#eeffff',
         'theme-primary': '#338247',
+        'spotilight-bg-dark': '#bbbbbb',
       },
     },
   },
