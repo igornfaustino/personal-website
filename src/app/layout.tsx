@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import HeaderClient from '@/components/HeaderClient'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 import Spotlight from '@/components/Spotlight'
 import type { Metadata } from 'next'
@@ -24,7 +24,7 @@ export default function RootLayout({
           <div
             className={`${inter.className} text-md flex min-h-screen flex-col items-center justify-between bg-slate-300 text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
           >
-            <Header />
+            <HeaderClient />
             {children}
             <SocialMediaLinks />
           </div>

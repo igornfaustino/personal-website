@@ -2,7 +2,7 @@
 import { useKBar } from 'kbar'
 import Keyboard from './Keyboard'
 
-export default function GetStartedButton() {
+export default function GetStartedClientButton() {
   const isMac = /(Mac)/i.test(navigator.userAgent)
   const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent)
 

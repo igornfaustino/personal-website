@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export default function Header() {
+export default function HeaderClient() {
   const pathname = usePathname()
   return (
     <div className="container flex justify-end gap-2">
