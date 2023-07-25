@@ -1,4 +1,4 @@
-import ShortcutButton from '@/components/ShortCut'
+import ShortcutButton from '@/components/GetStartedButton'
 import Title from '@/components/Title'
 
 export default function Home() {
