@@ -3,10 +3,15 @@ import Divider from '@/components/Divider'
 import MarkdownText from '@/components/MarkdownText'
 import SectionTitle from '@/components/SectionTitle'
 import SubTitle from '@/components/SubTitle'
+import { getJobItems } from '@/data/getCareerItems'
+import { getEducationItems } from '@/data/getEducationItems'
 import { getPage } from '@/data/getPage'
 
 export default async function AboutPage() {
   const page = await getPage('About Me')
+  const educationItems = await getEducationItems()
+  const jobItems = await getJobItems()
+
   return (
     <div className="container max-w-2xl pb-16 pt-16">
       <SubTitle>{page?.title}</SubTitle>
@@ -18,35 +23,17 @@ export default async function AboutPage() {
       <SectionTitle>Career</SectionTitle>
 
       <div className="mt-5 flex flex-col gap-5">
-        <AboutItem.Root>
-          <AboutItem.Position
-            position="fullstack developer"
-            company="Objective"
-            company_url="https://www.objective.com.br/"
-          />
-          <AboutItem.Location city="Maringá" country="Brazil" />
-          <AboutItem.Period start="2023-03-15" end="2023-04-15" />
-        </AboutItem.Root>
-
-        <AboutItem.Root>
-          <AboutItem.Position
-            position="fullstack developer"
-            company="Objective"
-            company_url="https://www.objective.com.br/"
-          />
-          <AboutItem.Location city="Maringá" country="Brazil" />
-          <AboutItem.Period start="2023-03-15" end="2023-04-15" />
-        </AboutItem.Root>
-
-        <AboutItem.Root>
-          <AboutItem.Position
-            position="fullstack developer"
-            company="Objective"
-            company_url="https://www.objective.com.br/"
-          />
-          <AboutItem.Location city="Maringá" country="Brazil" />
-          <AboutItem.Period start="2023-03-15" end="2023-04-15" />
-        </AboutItem.Root>
+        {jobItems.map((job) => (
+          <AboutItem.Root key={job.id}>
+            <AboutItem.Position
+              position={job.position}
+              company={job.company}
+              company_url={job.link}
+            />
+            <AboutItem.Location location={job.location} />
+            <AboutItem.Period start={job.start} end={job.end} />
+          </AboutItem.Root>
+        ))}
       </div>
 
       <Divider />
@@ -54,23 +41,19 @@ export default async function AboutPage() {
       <SectionTitle>Education</SectionTitle>
 
       <div className="mt-5 flex flex-col gap-5">
-        <AboutItem.Root>
-          <AboutItem.Position
-            position="MASTER IN INFORMATION SYSTEM"
-            company="Instituto Politécnico de Bragança"
-          />
-          <AboutItem.Location city="Bragança" country="Portugal" />
-          <AboutItem.Year start="2019" end="2020" />
-        </AboutItem.Root>
-
-        <AboutItem.Root>
-          <AboutItem.Position
-            position="BACHELOR OF COMPUTER SCIENCE"
-            company="Federal University of Technology - Paraná"
-          />
-          <AboutItem.Location city="Campo Mourão" country="Brazil" />
-          <AboutItem.Year start="2016" end="2020" />
-        </AboutItem.Root>
+        {educationItems.map((education) => (
+          <AboutItem.Root key={education.id}>
+            <AboutItem.Position
+              position={education.course}
+              company={education.school}
+            />
+            <AboutItem.Location location={education.location} />
+            <AboutItem.Year
+              start={education.startYear.toString()}
+              end={education.endYear?.toString()}
+            />
+          </AboutItem.Root>
+        ))}
       </div>
     </div>
   )

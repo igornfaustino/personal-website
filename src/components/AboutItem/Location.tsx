@@ -1,12 +1,7 @@
 interface RootProps {
-  city: string
-  country: string
+  location: string
 }
 
-export default function Location({ city, country }: RootProps) {
-  return (
-    <div>
-      {city}, {country}
-    </div>
-  )
+export default function Location({ location }: RootProps) {
+  return <div>{location}</div>
 }
