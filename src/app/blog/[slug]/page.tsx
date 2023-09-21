@@ -5,6 +5,7 @@ import PostDateAndReadTime from '@/components/PostDateAndReadTime'
 import Title from '@/components/Title'
 import { getPost } from '@/data/getPost'
 import { format, parseISO } from 'date-fns'
+import Image from 'next/image'
 
 export default async function BlogPost({
   params,
@@ -12,6 +13,7 @@ export default async function BlogPost({
   params: { slug: string }
 }) {
   const post = await getPost(params.slug)
+  console.log(post)
   const formattedDate = format(parseISO(post.date), 'LLL dd, yyyy')
   const readingTime = getPostReadingTime(post.content)
   return (
@@ -24,7 +26,18 @@ export default async function BlogPost({
         />
       </div>
       <Title className="min-w-full">{post?.title}</Title>
-      <p className="text-justify text-sm text-slate-400">{post.description}</p>
+      {post.coverImage && (
+        <Image
+          src={post.coverImage.url}
+          alt="post cover image"
+          className="w-full"
+          width={post.coverImage.width}
+          height={post.coverImage.height}
+        />
+      )}
+      <p className="pt-2 text-justify text-sm text-slate-400">
+        {post.description}
+      </p>
 
       <div className="mt-12" />
 

@@ -20,6 +20,11 @@ export async function getAllPosts() {
                     description
                     date
                     content
+                    coverImage {
+                      url
+                      width
+                      height
+                    }
                 }
             }`,
     }),
@@ -39,4 +44,9 @@ export type PostItem = {
   description: string
   date: string
   content: string
+  coverImage: {
+    url: string
+    width: number
+    height: number
+  }
 }

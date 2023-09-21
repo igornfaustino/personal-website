@@ -1,6 +1,7 @@
 import { HYGRAPH_API } from '@/common/API'
 import { JsonResponseType } from '@/common/JsonResponseType'
 import { TIME } from '@/common/Time'
+import { PostItem } from './getAllPosts'
 
 const cacheTime = 10 * TIME.MINUTE
 
@@ -20,6 +21,11 @@ export async function getPost(slug: string) {
                     description
                     date
                     content
+                    coverImage {
+                      url
+                      width
+                      height
+                    }
                 }
             }`,
     }),
@@ -29,13 +35,4 @@ export async function getPost(slug: string) {
   })
   const { data }: JsonResponseType<{ post: PostItem }> = await response.json()
   return data.post
-}
-
-export type PostItem = {
-  id: string
-  slug: string
-  title: string
-  description: string
-  date: string
-  content: string
 }
