@@ -7,7 +7,6 @@ import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 export function Code({ className, ...props }: SyntaxHighlighterProps) {
   const match = /language-(\w+)/.exec(className || '')
-  console.log(match)
   return match ? (
     <SyntaxHighlighter
       style={atomDark}
