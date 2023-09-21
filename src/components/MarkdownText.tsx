@@ -8,7 +8,7 @@ interface MarkdownTextProps {
 
 export default function MarkdownText({ className, source }: MarkdownTextProps) {
   return (
-    <div className={className}>
+    <div className={`prose max-w-none dark:prose-invert ${className} `}>
       <MDXRemote
         source={source ?? ''}
         components={markdownBaseComponents as any}

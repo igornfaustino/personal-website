@@ -1,3 +1,4 @@
+import { Code } from '@/components/CodeBlock'
 import ExternalLink from '@/components/ExternalLink'
 import Title from '@/components/Item/Title'
 import SubTitle from '@/components/SubTitle'
@@ -8,12 +9,10 @@ export type ComponentProps = {
 }
 
 export const markdownBaseComponents = {
-  p: ({ children }: ComponentProps) => (
-    <p className="mb-6 text-justify text-base">{children}</p>
-  ),
   a: ({ children }: ComponentProps) => (
     <ExternalLink className="border-b">{children}</ExternalLink>
   ),
   h1: Title,
   h2: SubTitle,
+  code: Code,
 }

@@ -1,4 +1,6 @@
+import { getPostReadingTime } from '@/common/getPostReadingTime'
 import { format, parseISO } from 'date-fns'
+import PostDateAndReadTime from '../PostDateAndReadTime'
 
 interface PostTitleProps {
   post: {
@@ -6,14 +8,6 @@ interface PostTitleProps {
     date: string
     content: string
   }
-}
-
-const getPostReadingTime = (content: string) => {
-  const wpm = 225
-  const words = content.trim().split(/\s+/).length
-  const time = Math.ceil(words / wpm)
-
-  return time
 }
 
 export default function PostTitle({ post }: PostTitleProps) {
@@ -25,7 +19,10 @@ export default function PostTitle({ post }: PostTitleProps) {
         {post.title}
       </h4>
       <span className="text-xs">
-        {formattedDate} - {readingTime} min read
+        <PostDateAndReadTime
+          formattedDate={formattedDate}
+          readingTime={readingTime}
+        />
       </span>
     </div>
   )
