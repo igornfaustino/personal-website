@@ -23,7 +23,7 @@ export default async function BlogPost({
           readingTime={readingTime}
         />
       </div>
-      <Title>{post?.title}</Title>
+      <Title className="min-w-full">{post?.title}</Title>
       <p className="text-justify text-sm text-slate-400">{post.description}</p>
 
       <div className="mt-12" />

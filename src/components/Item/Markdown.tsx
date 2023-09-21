@@ -1,19 +1,8 @@
-import {
-  ComponentProps,
-  markdownBaseComponents,
-} from '@/common/MarkdownBaseComponents'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import MarkdownText from '../MarkdownText'
 
 interface MarkdownTextProps {
   className?: string
   text?: string
-}
-
-const components = {
-  ...markdownBaseComponents,
-  p: ({ children }: ComponentProps) => (
-    <p className="mb-0 text-justify text-base">{children}</p>
-  ),
 }
 
 export default function Markdown({
@@ -22,7 +11,7 @@ export default function Markdown({
 }: MarkdownTextProps) {
   return (
     <div className={className}>
-      <MDXRemote source={source ?? ''} components={components as any} />
+      <MarkdownText source={source} className="text-sm" />
     </div>
   )
 }
