@@ -2,12 +2,12 @@ import Divider from '@/components/Divider'
 import Item from '@/components/Item'
 import MarkdownText from '@/components/MarkdownText'
 import SubTitle from '@/components/SubTitle'
+import { getAllPosts } from '@/data/getAllPosts'
 import { getPage } from '@/data/getPage'
-import { getProjects } from '@/data/getProjects'
 
-export default async function ProjectsPage() {
-  const page = await getPage('Projects')
-  const projects = getProjects()
+export default async function BlogPage() {
+  const page = await getPage('Blog')
+  const posts = await getAllPosts()
 
   return (
     <div className="container max-w-2xl pb-16 pt-16">
@@ -17,10 +17,10 @@ export default async function ProjectsPage() {
 
       <Divider />
 
-      {(await projects).map((project) => (
-        <Item.Root key={project.id}>
-          <Item.Title>{project.title}</Item.Title>
-          <Item.Markdown text={project.description} />
+      {posts.map((post) => (
+        <Item.Root key={post.id} path={`/blog/${post.slug}`}>
+          <Item.PostTitle post={post} />
+          <Item.Markdown text={post.description} />
         </Item.Root>
       ))}
     </div>

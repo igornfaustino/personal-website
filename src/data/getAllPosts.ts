@@ -14,10 +14,12 @@ export async function getAllPosts() {
     body: JSON.stringify({
       query: `{
                 posts(orderBy: date_DESC) {
+                    id
                     slug
                     title
                     description
                     date
+                    content
                 }
             }`,
     }),
@@ -30,9 +32,11 @@ export async function getAllPosts() {
   return data.posts
 }
 
-type PostItem = {
+export type PostItem = {
+  id: string
   slug: string
   title: string
   description: string
   date: string
+  content: string
 }

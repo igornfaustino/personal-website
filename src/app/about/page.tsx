@@ -1,5 +1,5 @@
-import AboutItem from '@/components/AboutItem'
 import Divider from '@/components/Divider'
+import Item from '@/components/Item'
 import MarkdownText from '@/components/MarkdownText'
 import SectionTitle from '@/components/SectionTitle'
 import SubTitle from '@/components/SubTitle'
@@ -22,17 +22,17 @@ export default async function AboutPage() {
 
       <SectionTitle>Career</SectionTitle>
 
-      <div className="mt-5 flex flex-col gap-5">
+      <div className="mt-5 flex flex-col">
         {jobItems.map((job) => (
-          <AboutItem.Root key={job.id}>
-            <AboutItem.Position
+          <Item.Root key={job.id}>
+            <Item.Position
               position={job.position}
               company={job.company}
               company_url={job.link}
             />
-            <AboutItem.Location location={job.location} />
-            <AboutItem.Period start={job.start} end={job.end} />
-          </AboutItem.Root>
+            <Item.Location location={job.location} />
+            <Item.Period start={job.start} end={job.end} />
+          </Item.Root>
         ))}
       </div>
 
@@ -40,19 +40,19 @@ export default async function AboutPage() {
 
       <SectionTitle>Education</SectionTitle>
 
-      <div className="mt-5 flex flex-col gap-5">
+      <div className="mt-5 flex flex-col">
         {educationItems.map((education) => (
-          <AboutItem.Root key={education.id}>
-            <AboutItem.Position
+          <Item.Root key={education.id}>
+            <Item.Position
               position={education.course}
               company={education.school}
             />
-            <AboutItem.Location location={education.location} />
-            <AboutItem.Year
+            <Item.Location location={education.location} />
+            <Item.Year
               start={education.startYear.toString()}
               end={education.endYear?.toString()}
             />
-          </AboutItem.Root>
+          </Item.Root>
         ))}
       </div>
     </div>
