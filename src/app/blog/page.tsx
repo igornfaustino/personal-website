@@ -1,7 +1,7 @@
 import Divider from '@/components/Divider'
 import Item from '@/components/Item'
 import MarkdownText from '@/components/MarkdownText'
-import SubTitle from '@/components/SubTitle'
+import Title from '@/components/Title'
 import { getAllPosts } from '@/data/getAllPosts'
 import { getPage } from '@/data/getPage'
 
@@ -10,8 +10,8 @@ export default async function BlogPage() {
   const posts = await getAllPosts()
 
   return (
-    <div className="container max-w-2xl pb-16 pt-16">
-      <SubTitle>{page?.title}</SubTitle>
+    <>
+      <Title>{page?.title}</Title>
 
       <MarkdownText className="mt-5 text-justify" source={page?.description} />
 
@@ -23,6 +23,6 @@ export default async function BlogPage() {
           <Item.Markdown text={post.description} />
         </Item.Root>
       ))}
-    </div>
+    </>
   )
 }

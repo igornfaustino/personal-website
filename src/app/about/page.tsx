@@ -2,7 +2,7 @@ import Divider from '@/components/Divider'
 import Item from '@/components/Item'
 import MarkdownText from '@/components/MarkdownText'
 import SectionTitle from '@/components/SectionTitle'
-import SubTitle from '@/components/SubTitle'
+import Title from '@/components/Title'
 import { getJobItems } from '@/data/getCareerItems'
 import { getEducationItems } from '@/data/getEducationItems'
 import { getPage } from '@/data/getPage'
@@ -14,15 +14,15 @@ export default async function AboutPage() {
 
   return (
     <div className="container max-w-2xl pb-16 pt-16">
-      <SubTitle>{page?.title}</SubTitle>
+      <Title>{page?.title}</Title>
 
-      <MarkdownText className="mt-5 text-justify" source={page?.description} />
+      <MarkdownText className="text-justify" source={page?.description} />
 
       <Divider />
 
       <SectionTitle>Career</SectionTitle>
 
-      <div className="mt-5 flex flex-col">
+      <div className="flex flex-col">
         {jobItems.map((job) => (
           <Item.Root key={job.id}>
             <Item.Position
@@ -40,7 +40,7 @@ export default async function AboutPage() {
 
       <SectionTitle>Education</SectionTitle>
 
-      <div className="mt-5 flex flex-col">
+      <div className="flex flex-col">
         {educationItems.map((education) => (
           <Item.Root key={education.id}>
             <Item.Position

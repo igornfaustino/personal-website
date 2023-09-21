@@ -1,7 +1,7 @@
 import Divider from '@/components/Divider'
 import Item from '@/components/Item'
 import MarkdownText from '@/components/MarkdownText'
-import SubTitle from '@/components/SubTitle'
+import Title from '@/components/Title'
 import { getPage } from '@/data/getPage'
 import { getProjects } from '@/data/getProjects'
 
@@ -11,9 +11,9 @@ export default async function ProjectsPage() {
 
   return (
     <div className="container max-w-2xl pb-16 pt-16">
-      <SubTitle>{page?.title}</SubTitle>
+      <Title>{page?.title}</Title>
 
-      <MarkdownText className="mt-5 text-justify" source={page?.description} />
+      <MarkdownText className="text-justify" source={page?.description} />
 
       <Divider />
 
