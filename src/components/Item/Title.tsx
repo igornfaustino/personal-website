@@ -6,8 +6,6 @@ interface TitleProps {
 
 export default function Title({ children }: TitleProps) {
   return (
-    <h4 className="pb-1 font-semibold uppercase text-theme-primary">
-      {children}
-    </h4>
+    <h4 className="font-semibold uppercase text-theme-primary">{children}</h4>
   )
 }

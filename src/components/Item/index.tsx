@@ -1,8 +1,9 @@
+import ImageItem from './Image'
 import Location from './Location'
 import Markdown from './Markdown'
 import Period from './Period'
 import Position from './Position'
-import PostTitle from './PostTitle'
+import PostMetadata from './PostMetadata'
 import Root from './Root'
 import Title from './Title'
 import Year from './Year'
@@ -15,5 +16,6 @@ export default {
   Year: Year,
   Markdown: Markdown,
   Title: Title,
-  PostTitle: PostTitle,
+  PostMetadata: PostMetadata,
+  Image: ImageItem,
 }
