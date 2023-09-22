@@ -13,7 +13,6 @@ export default async function BlogPost({
   params: { slug: string }
 }) {
   const post = await getPost(params.slug)
-  console.log(post)
   const formattedDate = format(parseISO(post.date), 'LLL dd, yyyy')
   const readingTime = getPostReadingTime(post.content)
   return (
