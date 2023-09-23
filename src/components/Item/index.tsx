@@ -1,3 +1,4 @@
+import HtmlText from './HtmlText'
 import ImageItem from './Image'
 import Location from './Location'
 import Markdown from './Markdown'
@@ -18,4 +19,5 @@ export default {
   Title: Title,
   PostMetadata: PostMetadata,
   Image: ImageItem,
+  HtmlText: HtmlText,
 }
