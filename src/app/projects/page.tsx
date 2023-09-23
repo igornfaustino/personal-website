@@ -10,7 +10,7 @@ export default async function ProjectsPage() {
   const projects = getProjects()
 
   return (
-    <div className="container max-w-2xl pb-16 pt-16">
+    <>
       <Title>{page?.title}</Title>
 
       <MarkdownText className="text-justify" source={page?.description} />
@@ -23,6 +23,6 @@ export default async function ProjectsPage() {
           <Item.Markdown text={project.description} />
         </Item.Root>
       ))}
-    </div>
+    </>
   )
 }

@@ -27,7 +27,7 @@ export default function RootLayout({
             className={`${inter.className} flex min-h-screen flex-col items-center justify-between`}
           >
             <HeaderClient />
-            {children}
+            <div className="container max-w-2xl pb-16 pt-16">{children}</div>
             <SocialMediaLinks />
           </div>
         </Spotlight>

@@ -13,7 +13,7 @@ export default async function AboutPage() {
   const jobItems = await getJobItems()
 
   return (
-    <div className="container max-w-2xl pb-16 pt-16">
+    <>
       <Title>{page?.title}</Title>
 
       <MarkdownText className="text-justify" source={page?.description} />
@@ -55,6 +55,6 @@ export default async function AboutPage() {
           </Item.Root>
         ))}
       </div>
-    </div>
+    </>
   )
 }
