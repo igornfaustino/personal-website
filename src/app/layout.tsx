@@ -3,6 +3,7 @@ import SocialMediaLinks from '@/components/SocialMediaLinks'
 import Spotlight from '@/components/Spotlight'
 import ThemeProvider from '@/context/ThemeProvider'
 import { getAllPages } from '@/data/getAllPages'
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -40,6 +41,7 @@ export default async function RootLayout({
             </div>
           </Spotlight>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
