@@ -11,6 +11,7 @@ import {
   KBarSearch,
   useMatches,
 } from 'kbar'
+import { useRouter } from 'next/navigation'
 
 type ItemProps = {
   active: boolean
@@ -54,9 +55,10 @@ export default function SpotlightClient({
   children,
   data,
 }: SpotlightClientProps) {
+  const router = useRouter()
   const actions = data.map(({ path, ...values }) => ({
     ...values,
-    perform: path ? () => (window.location.pathname = path) : undefined,
+    perform: path ? () => router.push(`/${path}`) : undefined,
   }))
 
   return (

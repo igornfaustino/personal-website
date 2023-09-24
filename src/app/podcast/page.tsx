@@ -9,8 +9,6 @@ export default async function page() {
   const episodes = await getAllPodcasts()
   const page = await getPage('Podcast')
 
-  console.log(episodes)
-
   return (
     <>
       <Title>{page?.title}</Title>

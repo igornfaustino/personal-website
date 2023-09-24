@@ -6,6 +6,7 @@ import Title from '@/components/Title'
 import { getPost } from '@/data/getPost'
 import { format, parseISO } from 'date-fns'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
 export default async function BlogPost({
   params,
@@ -13,8 +14,9 @@ export default async function BlogPost({
   params: { slug: string }
 }) {
   const post = await getPost(params.slug)
-  const formattedDate = format(parseISO(post.date), 'LLL dd, yyyy')
-  const readingTime = getPostReadingTime(post.content)
+  if (!post) return redirect('/404')
+  const formattedDate = format(parseISO(post?.date), 'LLL dd, yyyy')
+  const readingTime = getPostReadingTime(post?.content)
   return (
     <div>
       <div className="mb-2 flex w-full justify-between text-sm">

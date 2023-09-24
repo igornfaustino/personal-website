@@ -37,7 +37,7 @@ export async function getAllPages() {
   return data.pages
 }
 
-type PageItem = {
+export type PageItem = {
   locale: string
   title: string
   url: string
