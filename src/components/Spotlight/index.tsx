@@ -1,4 +1,5 @@
 import { getAllPages } from '@/data/getAllPages'
+import { getAllPodcasts } from '@/data/getAllPodcasts'
 import { getAllPosts } from '@/data/getAllPosts'
 import { ReactNode } from 'react'
 import SpotlightClient from './SpotlightClient'
@@ -42,9 +43,40 @@ export const socialMediaActions = [
   },
 ]
 
+const preferences = [
+  {
+    id: 'change theme',
+    name: 'Change theme...',
+    keywords: 'theme',
+    section: 'preferences',
+  },
+  {
+    id: 'Dark theme',
+    name: 'Dark',
+    parent: 'change theme',
+    keywords: 'dark theme',
+    action: 'theme-dark',
+  },
+  {
+    id: 'light theme',
+    name: 'Light',
+    parent: 'change theme',
+    keywords: 'dark theme',
+    action: 'theme-light',
+  },
+  {
+    id: 'System theme',
+    name: 'System',
+    parent: 'change theme',
+    keywords: 'System theme',
+    action: 'theme-system',
+  },
+]
+
 export default async function Spotlight({ children }: SpotlightProps) {
   const posts = await getAllPosts()
   const pages = await getAllPages()
+  const episodes = await getAllPodcasts()
 
   let actions: SpotlightData[] = []
 
@@ -75,6 +107,25 @@ export default async function Spotlight({ children }: SpotlightProps) {
     })
   })
 
+  actions.push({
+    id: 'podcasts',
+    name: 'Search podcast episode...',
+    keywords: 'podcast episode',
+    section: 'Podcast',
+  })
+
+  episodes.forEach((episode) => {
+    actions.push({
+      id: episode.id,
+      name: episode.title,
+      keywords: episode.description,
+      externalPath: episode.link,
+      parent: 'podcasts',
+      section: 'podcasts',
+    })
+  })
+
+  actions = actions.concat(preferences)
   actions = actions.concat(socialMediaActions)
   return <SpotlightClient data={actions}>{children}</SpotlightClient>
 }

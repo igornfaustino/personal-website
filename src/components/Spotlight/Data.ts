@@ -7,4 +7,5 @@ interface SpotlightData {
   externalPath?: string
   section?: string
   parent?: string
+  action?: string
 }

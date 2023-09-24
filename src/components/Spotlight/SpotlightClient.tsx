@@ -11,6 +11,7 @@ import {
   KBarSearch,
   useMatches,
 } from 'kbar'
+import { useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
 
 type ItemProps = {
@@ -56,6 +57,7 @@ export default function SpotlightClient({
   data,
 }: SpotlightClientProps) {
   const router = useRouter()
+  const { systemTheme, setTheme } = useTheme()
 
   const generatePerform = (data: SpotlightData) => {
     if (data.externalPath)
@@ -63,6 +65,10 @@ export default function SpotlightClient({
         window.open(data.externalPath, '_blank')
       }
     if (data.path) return () => router.push(`/${data.path}`)
+    if (data.action === 'theme-dark') return () => setTheme('dark')
+    if (data.action === 'theme-light') return () => setTheme('light')
+    if (data.action === 'theme-system')
+      return () => setTheme(systemTheme || 'light')
   }
 
   const actions = data.map((data) => ({
