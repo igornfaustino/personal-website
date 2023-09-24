@@ -36,7 +36,7 @@ export default async function BlogPost({
           height={post.coverImage.height}
         />
       )}
-      <p className="pt-2 text-justify text-sm text-slate-400">
+      <p className="pt-2 text-justify text-sm text-slate-500 dark:text-slate-400">
         {post.description}
       </p>
 
