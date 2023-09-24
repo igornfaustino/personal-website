@@ -6,6 +6,16 @@ import Title from '@/components/Title'
 import { getJobItems } from '@/data/getCareerItems'
 import { getEducationItems } from '@/data/getEducationItems'
 import { getPage } from '@/data/getPage'
+import { Metadata } from 'next'
+import Head from 'next/head'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('About Me')
+  return {
+    title: 'IGOR N FAUSTINO | ABOUT ME',
+    description: page?.description,
+  }
+}
 
 export default async function AboutPage() {
   const page = await getPage('About Me')
@@ -14,6 +24,9 @@ export default async function AboutPage() {
 
   return (
     <>
+      <Head>
+        <title>IGOR N FAUSTINO | About Me</title>
+      </Head>
       <Title>{page?.title}</Title>
 
       <MarkdownText className="text-justify" source={page?.description} />

@@ -2,6 +2,15 @@ import ShortcutButton from '@/components/GetStartedClientButton'
 import MainTitle from '@/components/MainTitle'
 import MarkdownText from '@/components/MarkdownText'
 import { getPage } from '@/data/getPage'
+import { Metadata } from 'next'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('Home')
+  return {
+    title: 'IGOR N FAUSTINO',
+    description: page?.description,
+  }
+}
 
 export default async function Home() {
   const page = await getPage('Home')

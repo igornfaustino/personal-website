@@ -5,14 +5,21 @@ import PostDateAndReadTime from '@/components/PostDateAndReadTime'
 import Title from '@/components/Title'
 import { getPost } from '@/data/getPost'
 import { format, parseISO } from 'date-fns'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string }
-}) {
+type Props = { params: { slug: string } }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPost(params.slug)
+  return {
+    title: `IGOR N FAUSTINO | ${post.title}`,
+    description: post?.description,
+  }
+}
+
+export default async function BlogPost({ params }: Props) {
   const post = await getPost(params.slug)
   if (!post) return redirect('/404')
   const formattedDate = format(parseISO(post?.date), 'LLL dd, yyyy')

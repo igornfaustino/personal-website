@@ -4,6 +4,15 @@ import MarkdownText from '@/components/MarkdownText'
 import Title from '@/components/Title'
 import { getAllPosts } from '@/data/getAllPosts'
 import { getPage } from '@/data/getPage'
+import { Metadata } from 'next'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage('Blog')
+  return {
+    title: 'IGOR N FAUSTINO | BLOG',
+    description: page?.description,
+  }
+}
 
 export default async function BlogPage() {
   const page = await getPage('Blog')
