@@ -7,11 +7,46 @@ interface SpotlightProps {
   children: ReactNode
 }
 
+export const socialMediaActions = [
+  {
+    id: 'linkedin',
+    name: 'Linkedin',
+    shortcut: ['l'],
+    keywords: 'linkedin',
+    section: 'Follow me',
+    externalPath: 'https://www.linkedin.com/in/igornfaustino',
+  },
+  {
+    id: 'github',
+    name: 'Github',
+    shortcut: ['a'],
+    keywords: 'github',
+    section: 'Follow me',
+    externalPath: 'https://github.com/igornfaustino',
+  },
+  {
+    id: 'twitter',
+    name: 'Twitter',
+    shortcut: ['t'],
+    keywords: 'twitter',
+    section: 'Follow me',
+    externalPath: 'https://twitter.com/igornfaustino',
+  },
+  {
+    id: 'youtube',
+    name: 'Youtube',
+    shortcut: ['y'],
+    keywords: 'youtube',
+    section: 'Follow me',
+    externalPath: 'https://www.youtube.com/channel/UCIOtxH-8UsIX8J7iHZ8px5w',
+  },
+]
+
 export default async function Spotlight({ children }: SpotlightProps) {
   const posts = await getAllPosts()
   const pages = await getAllPages()
 
-  const actions: SpotlightData[] = []
+  let actions: SpotlightData[] = []
 
   pages.forEach((page) => {
     actions.push({
@@ -39,5 +74,7 @@ export default async function Spotlight({ children }: SpotlightProps) {
       section: 'Posts',
     })
   })
+
+  actions = actions.concat(socialMediaActions)
   return <SpotlightClient data={actions}>{children}</SpotlightClient>
 }

@@ -56,9 +56,18 @@ export default function SpotlightClient({
   data,
 }: SpotlightClientProps) {
   const router = useRouter()
-  const actions = data.map(({ path, ...values }) => ({
-    ...values,
-    perform: path ? () => router.push(`/${path}`) : undefined,
+
+  const generatePerform = (data: SpotlightData) => {
+    if (data.externalPath)
+      return () => {
+        window.open(data.externalPath, '_blank')
+      }
+    if (data.path) return () => router.push(`/${data.path}`)
+  }
+
+  const actions = data.map((data) => ({
+    ...data,
+    perform: generatePerform(data),
   }))
 
   return (

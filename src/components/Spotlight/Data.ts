@@ -4,6 +4,7 @@ interface SpotlightData {
   shortcut?: string[]
   keywords?: string
   path?: string
+  externalPath?: string
   section?: string
   parent?: string
 }
