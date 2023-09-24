@@ -25,7 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-slate-300 text-base text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
+        className={`${inter.className} bg-slate-50 text-base text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
       >
         <ThemeProvider>
           <Spotlight>

@@ -32,7 +32,7 @@ const ResultItem = function ({ item, active }: ItemProps) {
   return (
     <div
       className={`h-full cursor-pointer p-2  ${
-        active ? 'bg-theme-primary' : 'dark:bg-theme-grey/90'
+        active ? 'bg-theme-primary' : 'bg-slate-100/90 dark:bg-theme-grey/90'
       } `}
     >
       {item.name}
