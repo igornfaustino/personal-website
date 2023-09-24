@@ -23,6 +23,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>IGOR N FAUSTINO</title>
+      </head>
       <body
         className={`${inter.className} bg-slate-300 text-base text-theme-grey accent-theme-primary dark:bg-theme-grey dark:text-slate-100`}
       >
