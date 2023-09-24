@@ -17,17 +17,19 @@ export default function HeaderClient({ pages }: Props) {
   const baseInteractionStyle =
     'cursor-pointer transition-all hover:scale-110 hover:text-theme-primary'
 
-  const activeStyle = 'text-theme-primary hover:scale-105'
+  const pageBaseStyle = baseInteractionStyle + ' hidden md:block'
+
+  const activeStyle = 'text-theme-primary hover:scale-105 hidden md:block'
 
   const allPagesWithLinks = pages.filter((page) => page.url)
 
   return (
-    <div className="container flex min-h-[80px] items-center justify-between">
-      <div className="flex w-fit items-center  py-4 text-theme-grey">
+    <div className="container flex min-h-[80px] items-center justify-between px-4">
+      <div className="flex w-fit items-center py-4 text-theme-grey">
         {pathname !== '/' && (
           <Link
             href="/"
-            className="max-w-fit cursor-pointer rounded-sm bg-theme-grey px-3 py-1 text-lg font-semibold uppercase  text-slate-100 transition-all hover:scale-105 hover:text-theme-primary dark:bg-slate-100 dark:text-theme-grey hover:dark:text-theme-primary"
+            className="max-w-fit cursor-pointer rounded-sm bg-theme-grey px-3 py-1 text-sm font-semibold uppercase text-slate-100  transition-all hover:scale-105 hover:text-theme-primary dark:bg-slate-100 dark:text-theme-grey hover:dark:text-theme-primary sm:text-lg"
           >
             igor n faustino
           </Link>
@@ -38,15 +40,13 @@ export default function HeaderClient({ pages }: Props) {
           <Link
             key={page.url}
             href={`/${page.url}`}
-            className={
-              pathname == `/${page.url}` ? activeStyle : baseInteractionStyle
-            }
+            className={pathname == `/${page.url}` ? activeStyle : pageBaseStyle}
           >
             {page.spotlightTitle}
           </Link>
         ))}
 
-        <div className="ml-4 min-h-[30px] items-center border-l border-slate-400 dark:border-slate-700" />
+        <div className="ml-4 hidden min-h-[30px] items-center border-l border-slate-400 dark:border-slate-700 md:block" />
 
         <div onClick={query.toggle} className={baseInteractionStyle}>
           <FaSearch />

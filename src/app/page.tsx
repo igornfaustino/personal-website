@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const page = await getPage('Home')
   return (
-    <main className="center flex h-full w-full items-center justify-center p-24">
+    <main className="center m-auto flex h-full w-[90%] items-center justify-center md:w-full ">
       <div className="flex flex-col items-baseline gap-6">
         <MainTitle>{page?.title}</MainTitle>
         <MarkdownText className="max-w-xl" source={page?.description} />

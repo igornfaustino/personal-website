@@ -33,7 +33,9 @@ export default async function RootLayout({
               className={`${inter.className} flex min-h-screen flex-col items-center justify-between`}
             >
               <HeaderClient pages={pages} />
-              <div className="container max-w-2xl pb-16 pt-16">{children}</div>
+              <div className="container px-4 pb-16 sm:pt-8 md:pt-16 lg:max-w-3xl 2xl:max-w-7xl">
+                {children}
+              </div>
               <SocialMediaLinks />
             </div>
           </Spotlight>
