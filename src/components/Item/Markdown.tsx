@@ -1,8 +1,8 @@
-import MarkdownText from '../MarkdownText'
+import MarkdownText from "../MarkdownText";
 
 interface MarkdownTextProps {
-  className?: string
-  text?: string
+  className?: string;
+  text?: string;
 }
 
 export default function Markdown({
@@ -13,5 +13,5 @@ export default function Markdown({
     <div className={className}>
       <MarkdownText source={source} className="text-sm" />
     </div>
-  )
+  );
 }

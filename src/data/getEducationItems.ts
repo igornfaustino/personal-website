@@ -1,15 +1,15 @@
-import { HYGRAPH_API } from '@/common/API'
-import { JsonResponseType } from '@/common/JsonResponseType'
-import { TIME } from '@/common/Time'
+import { HYGRAPH_API } from "@/common/API";
+import { JsonResponseType } from "@/common/JsonResponseType";
+import { TIME } from "@/common/Time";
 
-const cacheTime = 10 * TIME.MINUTE
+const cacheTime = 10 * TIME.MINUTE;
 
 export async function getEducationItems() {
   const response = await fetch(HYGRAPH_API, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
       query: `{
@@ -33,24 +33,24 @@ export async function getEducationItems() {
     next: {
       revalidate: cacheTime,
     },
-  })
+  });
   const { data }: JsonResponseType<{ educations: EducationItem[] }> =
-    await response.json()
-  return data.educations
+    await response.json();
+  return data.educations;
 }
 
 type EducationItem = {
-  id: string
-  course: string
-  endYear?: number
-  startYear: number
-  school: string
-  location: string
+  id: string;
+  course: string;
+  endYear?: number;
+  startYear: number;
+  school: string;
+  location: string;
   localizations: {
-    course: string
-    endYear: number
-    location: string
-    school: string
-    startYear: number
-  }[]
-}
+    course: string;
+    endYear: number;
+    location: string;
+    school: string;
+    startYear: number;
+  }[];
+};

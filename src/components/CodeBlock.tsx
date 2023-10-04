@@ -1,12 +1,12 @@
-'use client'
+"use client";
 import {
   Prism as SyntaxHighlighter,
   SyntaxHighlighterProps,
-} from 'react-syntax-highlighter'
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+} from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export function Code({ className, ...props }: SyntaxHighlighterProps) {
-  const match = /language-(\w+)/.exec(className || '')
+  const match = /language-(\w+)/.exec(className || "");
   return match ? (
     <SyntaxHighlighter
       style={atomDark}
@@ -17,5 +17,5 @@ export function Code({ className, ...props }: SyntaxHighlighterProps) {
     />
   ) : (
     <code className={className} {...props} />
-  )
+  );
 }

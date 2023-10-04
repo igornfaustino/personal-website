@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 type Props = {
-  html: string
-  className?: string
-}
+  html: string;
+  className?: string;
+};
 
 export default function HtmlText({ html, className }: Props) {
   return (
@@ -11,5 +11,5 @@ export default function HtmlText({ html, className }: Props) {
       className={`prose max-w-none dark:prose-invert ${className}`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
-  )
+  );
 }

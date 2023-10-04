@@ -1,7 +1,7 @@
 interface RootProps {
-  location: string
+  location: string;
 }
 
 export default function Location({ location }: RootProps) {
-  return <div>{location}</div>
+  return <div>{location}</div>;
 }

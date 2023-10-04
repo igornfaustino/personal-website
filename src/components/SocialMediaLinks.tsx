@@ -1,12 +1,12 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 import {
   FaCode,
   FaGithub,
   FaLinkedin,
   FaTwitter,
   FaYoutube,
-} from 'react-icons/fa'
-import ExternalLink from './ExternalLink'
+} from "react-icons/fa";
+import ExternalLink from "./ExternalLink";
 
 export default function SocialMediaLinks() {
   return (
@@ -37,9 +37,9 @@ export default function SocialMediaLinks() {
         </div>
       </ExternalLink>
     </div>
-  )
+  );
 }
 
 const HiddenLg = ({ children }: { children: ReactNode }) => (
   <span className="hidden lg:block">{children}</span>
-)
+);

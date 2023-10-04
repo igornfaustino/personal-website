@@ -1,9 +1,9 @@
-import ExternalLink from '../ExternalLink'
+import ExternalLink from "../ExternalLink";
 
 interface PositionProps {
-  company: string
-  position: string
-  company_url?: string
+  company: string;
+  position: string;
+  company_url?: string;
 }
 
 export default function Position({
@@ -15,8 +15,8 @@ export default function Position({
     <div>
       <span className="font-semibold uppercase text-theme-primary">
         {position}
-      </span>{' '}
-      at{' '}
+      </span>{" "}
+      at{" "}
       {company_url ? (
         <ExternalLink className="inline-block border-b" href={company_url}>
           {company}
@@ -25,5 +25,5 @@ export default function Position({
         company
       )}
     </div>
-  )
+  );
 }

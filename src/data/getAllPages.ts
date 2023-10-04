@@ -1,15 +1,15 @@
-import { HYGRAPH_API } from '@/common/API'
-import { JsonResponseType } from '@/common/JsonResponseType'
-import { TIME } from '@/common/Time'
+import { HYGRAPH_API } from "@/common/API";
+import { JsonResponseType } from "@/common/JsonResponseType";
+import { TIME } from "@/common/Time";
 
-const cacheTime = 10 * TIME.MINUTE
+const cacheTime = 10 * TIME.MINUTE;
 
 export async function getAllPages() {
   const response = await fetch(HYGRAPH_API, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
       query: `{
@@ -31,22 +31,22 @@ export async function getAllPages() {
     next: {
       revalidate: cacheTime,
     },
-  })
+  });
   const { data }: JsonResponseType<{ pages: PageItem[] }> =
-    await response.json()
-  return data.pages
+    await response.json();
+  return data.pages;
 }
 
 export type PageItem = {
-  locale: string
-  title: string
-  url: string
-  description: string
-  spotlightTitle: string
+  locale: string;
+  title: string;
+  url: string;
+  description: string;
+  spotlightTitle: string;
   localizations: {
-    locale: string
-    title: string
-    description: string
-    spotlightTitle: string
-  }[]
-}
+    locale: string;
+    title: string;
+    description: string;
+    spotlightTitle: string;
+  }[];
+};

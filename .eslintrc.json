@@ -1,21 +1,7 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": [
-    "prettier"
-  ],
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": [],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 80,
-        "tabWidth": 2,
-        "singleQuote": true,
-        "trailingComma": "all",
-        "arrowParens": "always",
-        "semi": false,
-        "endOfLine": "auto"
-      }
-    ],
     "import/no-anonymous-default-export": "off"
   }
 }

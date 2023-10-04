@@ -1,13 +1,13 @@
-import HtmlText from './HtmlText'
-import ImageItem from './Image'
-import Location from './Location'
-import Markdown from './Markdown'
-import Period from './Period'
-import Position from './Position'
-import PostMetadata from './PostMetadata'
-import Root from './Root'
-import Title from './Title'
-import Year from './Year'
+import HtmlText from "./HtmlText";
+import ImageItem from "./Image";
+import Location from "./Location";
+import Markdown from "./Markdown";
+import Period from "./Period";
+import Position from "./Position";
+import PostMetadata from "./PostMetadata";
+import Root from "./Root";
+import Title from "./Title";
+import Year from "./Year";
 
 export default {
   Location: Location,
@@ -20,4 +20,4 @@ export default {
   PostMetadata: PostMetadata,
   Image: ImageItem,
   HtmlText: HtmlText,
-}
+};

@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes } from 'react'
+import { AnchorHTMLAttributes } from "react";
 
 export default function ExternalLink(
   props: AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -11,5 +11,5 @@ export default function ExternalLink(
     >
       {props.children}
     </a>
-  )
+  );
 }

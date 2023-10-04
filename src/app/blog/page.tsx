@@ -1,22 +1,22 @@
-import Divider from '@/components/Divider'
-import Item from '@/components/Item'
-import MarkdownText from '@/components/MarkdownText'
-import Title from '@/components/Title'
-import { getAllPosts } from '@/data/getAllPosts'
-import { getPage } from '@/data/getPage'
-import { Metadata } from 'next'
+import Divider from "@/components/Divider";
+import Item from "@/components/Item";
+import MarkdownText from "@/components/MarkdownText";
+import Title from "@/components/Title";
+import { getAllPosts } from "@/data/getAllPosts";
+import { getPage } from "@/data/getPage";
+import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPage('Blog')
+  const page = await getPage("Blog");
   return {
-    title: 'IGOR N FAUSTINO | BLOG',
+    title: "IGOR N FAUSTINO | BLOG",
     description: page?.description,
-  }
+  };
 }
 
 export default async function BlogPage() {
-  const page = await getPage('Blog')
-  const posts = await getAllPosts()
+  const page = await getPage("Blog");
+  const posts = await getAllPosts();
 
   return (
     <>
@@ -50,5 +50,5 @@ export default async function BlogPage() {
         ))}
       </div>
     </>
-  )
+  );
 }

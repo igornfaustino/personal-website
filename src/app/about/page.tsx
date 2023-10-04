@@ -1,26 +1,26 @@
-import Divider from '@/components/Divider'
-import Item from '@/components/Item'
-import MarkdownText from '@/components/MarkdownText'
-import SectionTitle from '@/components/SectionTitle'
-import Title from '@/components/Title'
-import { getJobItems } from '@/data/getCareerItems'
-import { getEducationItems } from '@/data/getEducationItems'
-import { getPage } from '@/data/getPage'
-import { Metadata } from 'next'
-import Head from 'next/head'
+import Divider from "@/components/Divider";
+import Item from "@/components/Item";
+import MarkdownText from "@/components/MarkdownText";
+import SectionTitle from "@/components/SectionTitle";
+import Title from "@/components/Title";
+import { getJobItems } from "@/data/getCareerItems";
+import { getEducationItems } from "@/data/getEducationItems";
+import { getPage } from "@/data/getPage";
+import { Metadata } from "next";
+import Head from "next/head";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = await getPage('About Me')
+  const page = await getPage("About Me");
   return {
-    title: 'IGOR N FAUSTINO | ABOUT ME',
+    title: "IGOR N FAUSTINO | ABOUT ME",
     description: page?.description,
-  }
+  };
 }
 
 export default async function AboutPage() {
-  const page = await getPage('About Me')
-  const educationItems = await getEducationItems()
-  const jobItems = await getJobItems()
+  const page = await getPage("About Me");
+  const educationItems = await getEducationItems();
+  const jobItems = await getJobItems();
 
   return (
     <>
@@ -69,5 +69,5 @@ export default async function AboutPage() {
         ))}
       </div>
     </>
-  )
+  );
 }

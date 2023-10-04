@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { AnchorHTMLAttributes } from 'react'
+import Link from "next/link";
+import { AnchorHTMLAttributes } from "react";
 
 export default function InternalLink(
   props: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string },
@@ -11,5 +11,5 @@ export default function InternalLink(
     >
       {props.children}
     </Link>
-  )
+  );
 }
