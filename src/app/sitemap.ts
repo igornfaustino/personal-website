@@ -1,7 +1,7 @@
-import { PostItem, getAllPosts } from "@/data/getAllPosts";
-import { MetadataRoute } from "next";
+import { PostItem, getAllPosts } from '@/data/getAllPosts';
+import { MetadataRoute } from 'next';
 
-const EXTERNAL_DATA_URL = "https://nfaustino.com";
+const EXTERNAL_DATA_URL = 'https://nfaustino.com';
 
 // type PostSlug = { slug: string }
 
@@ -54,28 +54,28 @@ const EXTERNAL_DATA_URL = "https://nfaustino.com";
 // export default SiteMap
 
 const generatePostsMap = (posts: PostItem[]) =>
-  posts.map(({ slug }) => ({
-    url: `${`${EXTERNAL_DATA_URL}/blog/${slug}`}`,
-  }));
+	posts.map(({ slug }) => ({
+		url: `${`${EXTERNAL_DATA_URL}/blog/${slug}`}`,
+	}));
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await getAllPosts();
-  return [
-    {
-      url: EXTERNAL_DATA_URL,
-    },
-    {
-      url: `${EXTERNAL_DATA_URL}/about`,
-    },
-    {
-      url: `${EXTERNAL_DATA_URL}/blog`,
-    },
-    {
-      url: `${EXTERNAL_DATA_URL}/projects`,
-    },
-    {
-      url: `${EXTERNAL_DATA_URL}/podcast`,
-    },
-    ...generatePostsMap(posts),
-  ];
+	const posts = await getAllPosts();
+	return [
+		{
+			url: EXTERNAL_DATA_URL,
+		},
+		{
+			url: `${EXTERNAL_DATA_URL}/about`,
+		},
+		{
+			url: `${EXTERNAL_DATA_URL}/blog`,
+		},
+		{
+			url: `${EXTERNAL_DATA_URL}/projects`,
+		},
+		{
+			url: `${EXTERNAL_DATA_URL}/podcast`,
+		},
+		...generatePostsMap(posts),
+	];
 }

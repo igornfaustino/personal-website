@@ -1,3 +1,3 @@
 export interface JsonResponseType<T> {
-  data: T;
+	data: T;
 }
